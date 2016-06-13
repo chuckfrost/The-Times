@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Seattle Times FE Demo JQ</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<style>	
+	#outerwrap{
+		max-width: 1030px;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 0 10px;
+		position: relative;	
+	}
+	
+	.teaserblock{
+		float: left;
+		display: block;
+		margin-right: 3.2258064516%;
+		width: 29.1827956989%;
+	}
+	.teaserthumbnail {   
+		width: 100%;
+		height: 200px;
+	}
+	
+	img{
+		vertical-align: middle;
+            position: relative;
+    margin-bottom: 15px;
+	}
+	
+	.teasertitle{
+		margin-bottom: -4%;
+		margin-top: -6%;
+	}
+	
+	.teasertitle h2{
+		    font-size: 26px;
+			line-height: 28px;
+	}
+	
+	.firstthirty p{
+		    font-size: 17px;
+    line-height: 23px;
+	
+	}
+	
+	.category{
+	
+	    font-size: 20px;
+    line-height: 10px;
+    margin-bottom: 9%;
+	}
+	
+	</style>
+</head>
+<body>
+	<div id="outerwrap">
+		<div id="innerwrap"></div>
+	</div>
+	
+		<script>		
+		$.ajax({
+			url: "result.json",
+			dataType: "json"
+			}).success(function(data){
+				$.each(data.Articles, function(key, val){
+				
+				 var bodyText = val.Body.split('"').join('');			 
+				 $('<div class="teaserblock"><a href="http://localhost/' +val.ThumbnailImageId+ '"><img class="teaserthumbnail" src="gog.jpg"></a>' +
+					'<div class="category"><b>' +val.Category+ '</b></div>' +
+					'<div class="teasertitle"><h2><b>' +val.Title.split('"').join('')+ '</b></h2></div>' +
+					'<div class="firstthirty"><p>' +bodyText.split(/\s+/).slice(0,30).join(" ")+ '</p></div>' +
+					'</div>').appendTo('#innerwrap');			
+				})	
+		});
+		</script>
+	</body>
+</html>
