@@ -1,0 +1,12 @@
+{
+  "name": "stfeko",
+  "version": "1.0.0",
+  "description": "ko demo",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
+  },
+  "author": "chuck nelson",
+  "license": "ISC"
+}
