@@ -22,7 +22,7 @@ app.use('/seattletimes', seattleTimesrouter);
 var port = process.env.PORT || 5450;
 
 app.listen(port, function(err){
-    console.log('App running on: ' + port);
+    console.log('App running on:  http://localhost:' + port);
     if (err)
         throw err
 
