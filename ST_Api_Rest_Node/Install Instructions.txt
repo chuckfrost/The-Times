@@ -6,4 +6,4 @@
 4.  Copy source files to local machine
 5.  Using the command prompt or terminal go to the location of where the source files were saved.  Type 'npm install'.  This should install all of the npm modules
 6.  Once the npm install is complete, in the command prompt type 'npm start'. This should kick off the application.  
-		**NOTE** in the cmd/terminal window  you'll see a console.log that shows the port location for the app.   ie....http://localhost:5500/
+		**NOTE** in the cmd/terminal window  you'll see a console.log that shows the port location for the app.   ie....http://localhost:5500/     
