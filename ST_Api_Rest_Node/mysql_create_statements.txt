@@ -1,0 +1,33 @@
+***Run each of these statements individually inside MySQL workbench to build database and stored procedure***
+
+DROP database IF EXISTS `seattletimesdb`;
+
+CREATE database `seattletimesdb`;
+
+DROP TABLE IF EXISTS `seattletimesdb`.`articles`;
+
+CREATE TABLE `seattletimesdb`.`articles`(
+	`ArticleId` INT(9) NOT NULL,	
+	`Title` VARCHAR(90) NOT NULL,
+	`PlaceholderImageID` INT(4) NOT NULL,
+	`ThumbnailImageId` INT (9) NOT NULL,
+	`ArticleType` VARCHAR(45) NOT NULL,
+	`Category` VARCHAR(45) NOT NULL,
+	`Author` VARCHAR(45) NOT NULL,
+	`Body` LONGTEXT,
+	PRIMARY KEY (`ArticleId`));
+
+
+INSERT INTO `seattletimesdb`.`articles` VALUES
+	(23, '\"This is my Article\"', 1234, 432, 'Article', 'Politics', '\"John Doe\"', '\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu lacus vel sem egestas efficitur. Mauris feugiat ex dui, et mattis nibh tempor id. Aenean ut tincidunt turpis, a gravida nunc. Donec quis lacinia ante, quis tincidunt eros. Fusce gravida congue elit nec feugiat. Nulla facilisi. Sed in lorem et augue condimentum ultricies non et leo. Etiam gravida id erat ac semper.\"'),
+	(22, '\"This is my Article 2\"', 2352, 346346, 'Gallery', 'Politics', '\"Sarah Doe\"', '\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu lacus vel sem egestas efficitur. Mauris feugiat ex dui, et mattis nibh tempor id. Aenean ut tincidunt turpis, a gravida nunc. Donec quis lacinia ante, quis tincidunt eros. Fusce gravida congue elit nec feugiat. Nulla facilisi. Sed in lorem et augue condimentum ultricies non et leo. Etiam gravida id erat ac semper.\"'),
+	(27, '\"This is my Article 3\"', 6756, 1234563, 'Gallery', 'News', '\"Jane Doe\"', '\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu lacus vel sem egestas efficitur. Mauris feugiat ex dui, et mattis nibh tempor id. Aenean ut tincidunt turpis, a gravida nunc. Donec quis lacinia ante, quis tincidunt eros. Fusce gravida congue elit nec feugiat. Nulla facilisi. Sed in lorem et augue condimentum ultricies non et leo. Etiam gravida id erat ac semper.\"');
+
+
+
+DELIMITER //
+CREATE PROCEDURE sp_getallarticles()
+BEGIN
+  SELECT * FROM articles;
+END //
+DELIMITER ;
