@@ -19,9 +19,8 @@ var SeattleTimesDemoController = function(){
 
         mysqlconn.query(query, function(err, rows, fields){
             if(!err){
-                console.log(rows);
-                res.send('here are the rows: ', rows);
-             //   res.status(err).send(rows);
+                //console.log(rows);
+                res.json({results: rows});
             }
             else{
                 console.log(err, 'we got some issues');
@@ -36,9 +35,8 @@ var SeattleTimesDemoController = function(){
 
         mysqlconn.query(query, function(err, rows, fields){
             if(!err){
-                console.log(rows);
-                res.send('here are the rows: ', rows);
-                //   res.status(err).send(rows);
+                //console.log(rows);
+                res.json({results: rows});
             }
             else{
                 console.log(err, 'we got some issues');
@@ -52,9 +50,8 @@ var SeattleTimesDemoController = function(){
 
         mysqlconn.query(query,req.body, function(err, rows, fields){
             if(!err){
-                console.log(rows);
-                res.send('here are the rows: ', rows);
-                //   res.status(err).send(rows);
+                //console.log(rows);
+                res.json({results: rows});
             }
             else{
                 console.log(err, 'we got some issues');
@@ -69,9 +66,8 @@ var SeattleTimesDemoController = function(){
 
         mysqlconn.query(query, req.body, function(err, rows, fields){
             if(!err){
-                console.log(rows);
-                res.send('here are the rows: ', rows);
-                //   res.status(err).send(rows);
+                //console.log(rows);
+                res.json({results: rows});
             }
             else{
                 console.log(err, 'we got some issues');
@@ -87,9 +83,8 @@ var SeattleTimesDemoController = function(){
 
         mysqlconn.query(query, req.body, function(err, rows, fields){
             if(!err){
-                console.log(rows);
-                res.send('here are the rows: ', rows);
-                //   res.status(err).send(rows);
+                //console.log(rows);
+                res.json({results: rows});
             }
             else{
                 console.log(err, 'we got some issues');
